@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelanggan Masuk</title>
+  </head>
+  <body>
+    <h1>TEst Kriuk</h1>
+    <h1>Pelanggan Datang</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}  
+  <button type="submit">MEMBUAT PELANGGAN BARU</button>
+
+  <div>
+    <h1>Pelanggan Saat Ini</h1>
+  </div>
+    </form></h2>
+    <script>
+      function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      var randomNumberInput = document.getElementById("id_id");
+      var randomValue = getRandomNumber(12345, 98765);
+      randomNumberInput.value = randomValue;
+    </script>
+  </body>
+</html>

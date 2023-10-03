@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css\customer.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mihoyo Cafe</title>
+    <link
+      rel="shortcut icon"
+      href="{% static 'img\icon.ico' %}"
+      type="image/x-icon"
+   >
+  </head>
+  <body>
+    <header>
+      <div class="container-head">
+        <span class="menu-cat"><a href="#makanan">Foodies</a></span>
+        <span class="menu-cat"><a href="#minuman">Drinking</a></span>
+        <span class="menu-cat"><a href="#sidedish">Side Dish</a></span>
+      </div>
+    </header>
+    <div id="makanan" >
+      <h1>MAKANAN</h1>
+      <ul class="menu-rows">
+        {% for makanans in makanan %}
+        <li class="menu-item">
+          <img
+            class="gambar_menu"
+            src="{{ makanans.gambar.url }}"
+            alt="{{ makanans.nama_menu }}.jpg"
+         >
+          <h2 class="bd-nama nama-menu">{{ makanans.nama_menu }}</h2>
+          <p class="desk-menu bd-desk">{{ makanans.deskripsi }}</p>
+          <button class="add-chart bd-chart">Chart</button>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div id="minuman">
+      <h1>MINUMAN</h1>
+      <ul class="menu-rows">
+        {% for minumans in minuman %}
+        <li class="menu-item">
+          <img
+            class="gambar_menu"
+            src="{{ minumans.gambar.url }}"
+            alt="{{ minumans.nama_menu }}.jpg"
+         >
+          <h2 class="bd-nama nama-menu">{{ minumans.nama_menu }}</h2>
+          <p class="desk-menu bd-desk">{{ minumans.deskripsi }}</p>
+          <button class="add-chart bd-chart">Chart</button>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div id="sidedish">
+      <h1>Side Dish</h1>
+      <ul class="menu-rows">
+        {% for sidedishs in sidedish %}
+        <li class="menu-item">
+          <img
+            class="gambar-menu"
+            src="{{ sidedishs.gambar.url }}"
+            alt="{{ sidedishs.nama_menu }}.jpg"
+         >
+          <h2 class="bd-nama nama-menu">{{ sidedishs.nama_menu }}</h2>
+          <p class="desk-menu bd-desk">{{ sidedishs.deskripsi }}</p>
+          <button class="add-chart bd-chart">Chart</button>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
